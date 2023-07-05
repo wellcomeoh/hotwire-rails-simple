@@ -1,0 +1,8 @@
+<h1>Editing Jobb</h1>
+
+<%= turbo_frame_tag 'edit_jobb' do %>
+  <%= render 'form', jobb: @jobb %>
+<% end %>
+
+<%= link_to 'Show', @jobb %> |
+<%= link_to 'Back', jobbs_path %>

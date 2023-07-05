@@ -1,0 +1,27 @@
+<%= form_with(model: jobb, data: { turbo_frame: 'new_jobb' }) do |form| %>
+  <% if jobb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(jobb.errors.count, "error") %> prohibited this jobb from being saved:</h2>
+
+      <ul>
+        <% jobb.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
